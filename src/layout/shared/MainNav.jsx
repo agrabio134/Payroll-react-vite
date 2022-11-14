@@ -1,0 +1,48 @@
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+import '../../App.css' 
+import './mainNav.css'
+import CreateUser from "../../components/CreateUser"
+import EditUser from "../../components/EditUser"
+import ListUsers from "../../components/ListUser"
+import PayrollPage from '../../components/payroll'
+import AttendancePage from '../../components/AttendanceLog'
+// import LoginPage from '../../pages/Login/Login';
+
+
+const MainNav = () => {
+  
+  return (
+    <div className="main-nav-container">
+      <BrowserRouter>
+
+      <div className='nav-item'>
+          <ul>
+            <li><Link to="/">List of Employee</Link></li>
+            <li><Link to="user/payroll">Payroll</Link></li>
+            <li><Link to="user/attendance">Attendance</Link></li>
+            <li><Link to="user/create">Create User</Link></li>
+            <li><a className='logout' href='http://localhost/api/logout.php'>Logout</a></li>
+          </ul>
+        </div>
+
+        <div className='nav-item'>
+     
+            <Routes>
+                <Route index element={<ListUsers />}></Route>
+                <Route path="user/payroll" element={<PayrollPage />}></Route>
+                <Route path="user/attendance" element={<AttendancePage />}></Route>
+                <Route path="user/create" element={<CreateUser />}></Route>
+                <Route path="user/:id/edit" element={<EditUser />}></Route>
+                
+            </Routes>
+        </div>
+          
+            
+      </BrowserRouter>
+      
+      
+    </div>
+  )
+}
+
+export default MainNav
