@@ -1,4 +1,7 @@
-
+html{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 .main-nav-container {
   display: flex;
   height: 100%;

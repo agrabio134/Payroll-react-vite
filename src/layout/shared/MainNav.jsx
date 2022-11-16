@@ -1,11 +1,12 @@
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import '../../App.css' 
+import AttendancePage from '../../components/pages/attendance/AttendanceLog'
+import CreateUser from '../../components/pages/createuser/CreateUser'
+import EditUser from '../../components/pages/edit/EditUser'
+import ListUsers from '../../components/pages/list/ListUser'
+import PayrollPage from '../../components/pages/payroll/Payroll'
 import './mainNav.css'
-import CreateUser from "../../components/CreateUser"
-import EditUser from "../../components/EditUser"
-import ListUsers from "../../components/ListUser"
-import PayrollPage from '../../components/payroll'
-import AttendancePage from '../../components/AttendanceLog'
+// import PayrollPage from '../../components/payroll'
 // import LoginPage from '../../pages/Login/Login';
 
 
