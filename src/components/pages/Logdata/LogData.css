@@ -1,0 +1,12 @@
+.log-data-container{
+    display: grid;
+    grid-template-columns: 55% 45%;
+    
+
+}
+
+.list-container{
+    height: 500px;
+    width: 100%;
+    overflow-x: hidden;
+}

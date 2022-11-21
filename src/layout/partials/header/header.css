@@ -1,0 +1,13 @@
+
+.header-container{
+    width: 210vh;
+    padding: 1px;
+    display: flex;
+    justify-content: end;
+}
+.logo{
+    margin-right: 40px;
+    height: 45px;
+    width: 50px;
+
+}
