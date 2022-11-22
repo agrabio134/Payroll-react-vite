@@ -6,7 +6,12 @@
 }
 
 .list-container{
-    height: 500px;
+    height: 520px;
     width: 100%;
     overflow-x: hidden;
+}
+
+.frame{
+    height: 80vh;
+    width: 600px;
 }
