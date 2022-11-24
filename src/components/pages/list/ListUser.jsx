@@ -28,9 +28,8 @@ const ListUsers = () => {
     return (
         <div className="main-container">
             <div className="list-container">
-            <div className="list-item">
-                <h1>LIST OF EMPLOYEE</h1>
-            </div>
+            <h1>LIST OF EMPLOYEE</h1>
+
             <div className="list-item">
             <table>
                 <thead>
@@ -54,7 +53,7 @@ const ListUsers = () => {
                             
                             <td className="item">
                                 <Link to={`user/${user.id}/edit`} className="edit-btn">Edit</Link>
-                                <button onClick={() => deleteUser(user.id)}>Delete</button>
+                                <button onClick={() => deleteUser(user.id)} className="del-btn">Delete</button>
                             </td>
                         </tr>
                     )}

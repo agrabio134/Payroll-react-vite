@@ -37,12 +37,8 @@ const LogDataPage = () => {
             
             <div className="list-container">
 
-                
-            <div className="list-item">
-                <h1>LIST OF EMPLOYEE</h1>
-
-                
-            </div>
+            <h1>LIST OF EMPLOYEE</h1>
+        
             <div className="list-item">
             <table>
                 <thead>

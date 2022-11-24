@@ -8,7 +8,9 @@ html{
   z-index: 1;
 
 }
-
+.del-btn{
+  background-color: rgb(82, 29, 29);
+}
 
 .main-container{
   display: flex;
@@ -33,13 +35,15 @@ html{
   width: 100%;
   height: 100%;
   padding: 20px;
-  background-color: rgb(41, 41, 41);
+  background-color: rgb(255, 255, 255);
+  color: #000;
   margin: 30px;
   border: 5px solid rgb(114, 114, 114);
   border-radius: 10px ;
 }
 .list-item{
   display: grid;
+  color: white;
 }
 table .item{
   background-color: rgb(29, 29, 29);

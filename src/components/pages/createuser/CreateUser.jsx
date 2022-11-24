@@ -20,7 +20,8 @@ const CreateUser = () => {
         axios.post('http://localhost:80/api/user/save', inputs).then(function(response){
             console.log(response.data)
             console.log("test")
-            // navigate('/')
+            alert("User added")
+            navigate('/')
         })
         
 
