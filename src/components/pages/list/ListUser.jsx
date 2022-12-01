@@ -29,6 +29,7 @@ const ListUsers = () => {
         <div className="main-container">
             <div className="list-container">
             <h1>LIST OF EMPLOYEE</h1>
+            <iframe src="http://localhost/api/payroll/add_file.php" frameborder="0"></iframe>
 
             <div className="list-item">
             <table>
