@@ -1,9 +1,9 @@
-g-- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2022 at 01:58 PM
+-- Generation Time: Dec 03, 2022 at 05:49 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.30
 
@@ -49,7 +49,44 @@ INSERT INTO `attendance` (`attendance_id`, `log_type`, `datetime_log`, `users_id
 (46, 3, '2022-11-16 04:52:26', 18),
 (47, 1, '2022-11-18 03:32:20', 19),
 (48, 3, '2022-11-18 04:12:15', 18),
-(49, 1, '2022-11-22 08:10:01', 19);
+(49, 1, '2022-11-22 08:10:01', 19),
+(50, 1, '2022-11-24 13:17:21', 20),
+(51, 1, '2022-12-03 04:48:05', 19);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payslip`
+--
+
+CREATE TABLE `payslip` (
+  `id` int(11) NOT NULL,
+  `file_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `emp_num` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `uploaded_on` datetime NOT NULL,
+  `status` enum('1','0') COLLATE utf8_unicode_ci NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `payslip`
+--
+
+INSERT INTO `payslip` (`id`, `file_name`, `emp_num`, `uploaded_on`, `status`) VALUES
+(1, 'newfile (10).txt', '', '2022-12-01 08:35:50', '1'),
+(50, 'newfile (11).txt', '01301972', '2022-12-01 18:30:15', '1'),
+(81, 'newfile (11).txt', '01301972', '2022-12-01 19:31:55', '1'),
+(82, 'newfile (11).txt', '01301972', '2022-12-01 19:36:57', '1'),
+(83, 'newfile (11).txt', '01301972', '2022-12-01 19:38:44', '1'),
+(84, 'newfile (11).txt', '01301972', '2022-12-01 19:39:28', '1'),
+(85, 'newfile (11).txt', '04012020', '2022-12-01 19:50:21', '1'),
+(86, 'newfile (11).txt', '04012020', '2022-12-01 19:50:44', '1'),
+(87, 'newfile (11).txt', '', '2022-12-03 11:15:13', '1'),
+(88, 'newfile (11).txt', '202010364', '2022-12-03 11:17:01', '1'),
+(89, 'newfile (11).txt', '', '2022-12-03 12:37:00', '1'),
+(90, 'newfile (11).txt', '', '2022-12-03 12:38:00', '1'),
+(91, 'newfile (11).txt', '2020-10364', '2022-12-03 12:38:56', '1'),
+(92, 'newfile (11).txt', '202010364', '2022-12-03 12:40:18', '1'),
+(93, 'newfile (11).txt', '202010364', '2022-12-03 12:41:08', '1');
 
 -- --------------------------------------------------------
 
@@ -443,7 +480,9 @@ INSERT INTO `salary` (`salary_id`, `gross_salary`, `deduction`, `tax`, `sss`, `n
 (389, 0, 0, 0, 0, 0, 8),
 (390, 0, 0, 0, 0, 0, 8),
 (391, 0, 0, 0, 0, 0, 8),
-(392, 0, 0, 0, 0, 0, 8);
+(392, 0, 0, 0, 0, 0, 8),
+(393, 7800, 520, 936, 1014, 5684, 23),
+(394, 8250, 1100, 990, 1073, 5555, 28);
 
 -- --------------------------------------------------------
 
@@ -460,6 +499,7 @@ CREATE TABLE `users` (
   `type` varchar(100) NOT NULL,
   `salary_id` int(100) DEFAULT NULL,
   `attendance_id` int(100) DEFAULT NULL,
+  `pay_id` int(255) DEFAULT NULL,
   `employee_no` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -467,25 +507,24 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `fullname`, `email`, `password`, `department`, `type`, `salary_id`, `attendance_id`, `employee_no`) VALUES
-(1, 'administrator', 'administrator@administrator.com', 'administrator', 'it department', 'admin', NULL, 1, '2020-10364'),
-(8, 'teststaff', 'teststaff@admin.das', 'teststaff', 'hr department', 'staff', NULL, NULL, ''),
-(9, 'harvey', 'adas@djasdjas.com', 'adas', 'HR Department', 'staff', NULL, NULL, ''),
-(10, 'DumyUser', 'agrabio@harvey,com', '41243122', 'HR Department', 'staff', NULL, NULL, ''),
-(11, 'testkolangmuna', 'testkolangmuna@test.com', 'testkolangmuna@test.com', 'IT department', 'staff', NULL, NULL, ''),
-(12, 'administrator', 'administrator', 'administrator', 'IT department', 'staff', NULL, NULL, ''),
-(13, 'administrator3112', 'administrator3112', '$2y$10$uENX/ViCZjNuAutOZu925.nHzARuc/twhItJVp5V.f/otQsM7enim', 'IT department', 'staff', NULL, NULL, ''),
-(14, 'test', 'test', '$2y$10$PBI8hdGhQfyV1BsB7peoceMU9omOcrUTc5vGcy79lNTFAFPaU61V.', 'IT department', 'admin', NULL, NULL, ''),
-(15, 'testuserlogin', 'testuserlogin', 'testuserlogin', 'IT department', 'staff', NULL, NULL, ''),
-(16, 'myuser', 'myuser', 'd41d8cd98f00b204e9800998ecf8427e', 'HR department', 'admin', NULL, NULL, ''),
-(17, 'adminstest', 'adminstest', '61284dbdc1840de89926e109d9ee28f3', 'HR department', 'staff', NULL, NULL, ''),
-(18, 'administrator', 'administrator', '200ceb26807d6bf99fd6f4f0d1ca54d4', 'IT department', 'admin', NULL, NULL, '2020101010'),
-(19, 'John Harvey Agrabio', 'agrabioharvey@gmail.com', '70820d6efdb177302505269c9606bad6', 'IT department', 'admin', NULL, NULL, '202010364'),
-(20, 'administrator', 'testadmin@gmail.com', 'a384b6463fc216a5f8ecb6670f86456a', 'IT department', 'admin', NULL, NULL, '202010366'),
-(22, 'dasd', 'testadmin@gmail.com', 'a384b6463fc216a5f8ecb6670f86456a', 'IT department', 'admin', NULL, NULL, '123221'),
-(23, 'agrabio', 'agrabio@email.com', 'ea0af9b0c221bedb8fa56f50e03e3753', 'IT department', 'admin', NULL, NULL, '040120'),
-(24, 'agrabio', 'agrabio@email.com', 'ea0af9b0c221bedb8fa56f50e03e3753', 'IT department', 'admin', NULL, NULL, '040120'),
-(28, 'yow', 'mentol@gmail.com', 'd1eb7f6bab6fd0c5c2e3b252ea399e09', 'HR department', 'staff', NULL, NULL, '01301972');
+INSERT INTO `users` (`id`, `fullname`, `email`, `password`, `department`, `type`, `salary_id`, `attendance_id`, `pay_id`, `employee_no`) VALUES
+(1, 'administrator', 'administrator@administrator.com', 'administrator', 'it department', 'admin', NULL, 1, NULL, '2020-10364'),
+(8, 'teststaff', 'teststaff@admin.das', 'teststaff', 'hr department', 'staff', NULL, NULL, NULL, ''),
+(9, 'harvey', 'adas@djasdjas.com', 'adas', 'HR Department', 'staff', NULL, NULL, NULL, ''),
+(10, 'DumyUser', 'agrabio@harvey,com', '41243122', 'HR Department', 'staff', NULL, NULL, NULL, ''),
+(11, 'testkolangmuna', 'testkolangmuna@test.com', 'testkolangmuna@test.com', 'IT department', 'staff', NULL, NULL, NULL, ''),
+(12, 'administrator', 'administrator', 'administrator', 'IT department', 'staff', NULL, NULL, NULL, ''),
+(13, 'administrator3112', 'administrator3112', '$2y$10$uENX/ViCZjNuAutOZu925.nHzARuc/twhItJVp5V.f/otQsM7enim', 'IT department', 'staff', NULL, NULL, NULL, ''),
+(14, 'test', 'test', '$2y$10$PBI8hdGhQfyV1BsB7peoceMU9omOcrUTc5vGcy79lNTFAFPaU61V.', 'IT department', 'admin', NULL, NULL, NULL, ''),
+(15, 'testuserlogin', 'testuserlogin', 'testuserlogin', 'IT department', 'staff', NULL, NULL, NULL, ''),
+(16, 'myuser', 'myuser', 'd41d8cd98f00b204e9800998ecf8427e', 'HR department', 'admin', NULL, NULL, NULL, ''),
+(17, 'adminstest', 'adminstest', '61284dbdc1840de89926e109d9ee28f3', 'HR department', 'staff', NULL, NULL, NULL, ''),
+(18, 'administrator', 'administrator', '200ceb26807d6bf99fd6f4f0d1ca54d4', 'IT department', 'admin', NULL, NULL, NULL, '2020101010'),
+(19, 'John Harvey Agrabio', 'agrabioharvey@gmail.com', '70820d6efdb177302505269c9606bad6', 'IT department', 'admin', NULL, NULL, NULL, '202010364'),
+(20, 'administrator', 'testadmin@gmail.com', 'a384b6463fc216a5f8ecb6670f86456a', 'IT department', 'admin', NULL, NULL, NULL, '202010366'),
+(22, 'dasd', 'testadmin@gmail.com', 'a384b6463fc216a5f8ecb6670f86456a', 'IT department', 'admin', NULL, NULL, NULL, '123221'),
+(23, 'agrabio', 'agrabio@email.com', 'ea0af9b0c221bedb8fa56f50e03e3753', 'IT department', 'admin', NULL, NULL, NULL, '040120'),
+(24, 'agrabio', 'agrabio@email.com', 'ea0af9b0c221bedb8fa56f50e03e3753', 'IT department', 'admin', NULL, NULL, NULL, '040120');
 
 --
 -- Indexes for dumped tables
@@ -499,6 +538,12 @@ ALTER TABLE `attendance`
   ADD KEY `FK_users` (`users_id`);
 
 --
+-- Indexes for table `payslip`
+--
+ALTER TABLE `payslip`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `salary`
 --
 ALTER TABLE `salary`
@@ -510,7 +555,8 @@ ALTER TABLE `salary`
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD KEY `users_ibfk_2` (`attendance_id`),
-  ADD KEY `salary_id` (`salary_id`);
+  ADD KEY `salary_id` (`salary_id`),
+  ADD KEY `id` (`pay_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -520,13 +566,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `attendance_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `attendance_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+
+--
+-- AUTO_INCREMENT for table `payslip`
+--
+ALTER TABLE `payslip`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT for table `salary`
 --
 ALTER TABLE `salary`
-  MODIFY `salary_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=393;
+  MODIFY `salary_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=395;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -549,7 +601,8 @@ ALTER TABLE `attendance`
 --
 ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`attendance_id`) REFERENCES `attendance` (`attendance_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `users_ibfk_3` FOREIGN KEY (`salary_id`) REFERENCES `salary` (`salary_id`);
+  ADD CONSTRAINT `users_ibfk_3` FOREIGN KEY (`salary_id`) REFERENCES `salary` (`salary_id`),
+  ADD CONSTRAINT `users_ibfk_4` FOREIGN KEY (`pay_id`) REFERENCES `payslip` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
