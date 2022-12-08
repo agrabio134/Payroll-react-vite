@@ -39,7 +39,7 @@ const ListUsers = () => {
             <table>
                 <thead>
                     <tr>
-                        <th className="item">id </th>
+                        <th className="item">Employee Number </th>
                         <th className="item">Name </th>
                         <th className="item">Email </th>
                         <th className="item">Department </th>
@@ -50,7 +50,7 @@ const ListUsers = () => {
                 <tbody>
                 {users.map((user, key) =>
                         <tr key={key}>
-                            <td className="item">{user.id}</td>
+                            <td className="item">{user.employee_no}</td>
                             <td className="item">{user.fullname}</td>
                             <td className="item">{user.email}</td>
                             <td className="item">{user.department}</td>

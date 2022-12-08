@@ -31,16 +31,63 @@ const CreateUser = () => {
             <div className="create-container">
             <h1>Create User </h1>
             <form onSubmit={handleSubmit}>
-                <table cellSpacing="10">
+                <table cellSpacing="4">
                     <tbody>
+                    <div className="create-item-container">
+                    <div className="create-item">
                         <tr>
                             <th>
-                                <label>Name: </label>
+                                <label>Full Name: </label>
                             </th>
                             <td> 
                                 <input type="text" name="name" onChange={handleChange} />
                             </td>
                         </tr>
+                        <tr>
+                            <th>
+                                <label>Date of Birth: </label>
+                            </th>
+                            <td> 
+                                <input type="date" name="birthdate" onChange={handleChange} />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label>Place of Birth: </label>
+                            </th>
+                            <td> 
+                                <input type="text" name="birthplace" onChange={handleChange} />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label>Permanent Address: </label>
+                            </th>
+                            <td> 
+                                <input type="text" name="address" onChange={handleChange} />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label>Sex: </label>
+                            </th>
+                            <td>
+                                <input type="radio"  name="sex" value="Male" onChange={handleChange}></input>
+                                <label>MALE</label>
+                                <input type="radio"  name="sex" value="Female" onChange={handleChange}></input>
+                                <label>FEMALE</label>       
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label>Citezenship: </label>
+                            </th>
+                            <td> 
+                                <input type="text" name="citezenship" onChange={handleChange} />
+                            </td>
+                        </tr>
+                        </div>
+                        <div className="create-item">
                         <tr>
                             <th>
                                 <label>Email: </label>
@@ -76,6 +123,7 @@ const CreateUser = () => {
                                 <label>HR</label>       
                             </td>
                         </tr>
+                        
                         <tr>
                             <th>
                                 <label>User Type: </label>
@@ -87,9 +135,23 @@ const CreateUser = () => {
                                 <label>Staff</label>     
                             </td>
                         </tr>
+                        <tr>
+                            <th>
+                                <label>Daily Salary Rate in ₱:</label>
+                            </th>
+                            <td>
+                            <input type="number" name="salary"  defaultValue ="520.00" onChange={handleChange} />                             
+                            </td>
+                        </tr> 
+                        </div>
+                       
+                        <div className="create-btn"><button>Submit</button></div>
+
+                        </div>
                     </tbody>
+                   
                 </table>
-                <button>Submit</button>
+                
             </form>
             </div>
         </div>

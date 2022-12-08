@@ -1,0 +1,24 @@
+.main-container{
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid rgb(76, 0, 255); */
+    height: 100%;
+}
+.payroll-container{
+    width: 160vh;
+    height: 90%;
+    /* border: 2px solid red; */
+}
+.payroll-item{
+    display: flex;
+    justify-content: center;
+}
+.frame{
+    /* border: 2px solid rgb(76, 0, 255); */
+    height: 75vh;
+    width: 90%;
+    
+}
+h1{
+    text-align: center;
+}

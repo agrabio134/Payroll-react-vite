@@ -1,11 +1,16 @@
 import '../../../App.css'
-import LogDataPage from '../Logdata/LogData'
+import './Payroll.css'
+
 const PayrollPage = () => {
     return (
         <div className='main-container'>
             <div className="payroll-container">
             
-            <LogDataPage/>
+                {/* <h1>PAYROLL</h1> */}
+                <div className="payroll-item">
+                 <iframe src="http://localhost/api/payroll/paymain" className="frame" ></iframe>
+                 </div>
+            {/* <LogDataPage/> */}
          
          
         

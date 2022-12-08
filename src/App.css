@@ -1,6 +1,6 @@
 html{ 
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: hidden; 
 }
 .main-nav-container {
   display: flex;
@@ -30,12 +30,27 @@ html{
   
 
 }
-.list-container, .create-container, .edit-container, .attendance-container, .payroll -container{
+.create-btn{
+  margin-top: 50px;
+}
+.create-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.create-item-container{
+  display: grid;
+  padding: 70px;
+  grid-template-columns: 1fr 1fr;
+  border: 4px solid rgb(160, 159, 159);
+  /* grid-template-columns: 75vh 75vh ; */
+}
+.list-container, .create-container, .edit-container, .attendance-container, .payroll-container{
   text-align: left;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   padding: 20px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(226, 226, 226);
   color: #000;
   margin: 30px;
   border: 5px solid rgb(114, 114, 114);
@@ -61,3 +76,7 @@ table .item{
  color: rgb(255, 255, 255);
  background-color: black;
 }
+
+
+
+
