@@ -5,6 +5,8 @@ html{
 .main-nav-container {
   display: flex;
   height: 100%;
+  width: 100%;
+  position: fixed;
   z-index: 1;
 
 }
@@ -14,8 +16,7 @@ html{
 
 .main-container{
   display: flex;
-  /* border: 2px solid red; */
-  width: 175vh;
+  width: 180vh;
   justify-content: center;
   height: 80vh;
 
@@ -43,7 +44,6 @@ html{
   padding: 70px;
   grid-template-columns: 1fr 1fr;
   border: 4px solid rgb(160, 159, 159);
-  /* grid-template-columns: 75vh 75vh ; */
 }
 .list-container, .create-container, .edit-container, .attendance-container, .payroll-container{
   text-align: left;
