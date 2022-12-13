@@ -23,6 +23,7 @@ const MainNav = () => {
             <li><Link to="user/payroll">Payroll</Link></li>
             <li><Link to="user/attendance">Attendance</Link></li>
             <li><Link to="user/create">Create User</Link></li>
+            
             {/* <li><Link to="user/request-leave">Leave</Link></li> */}
             <li><a className='logout' href='http://localhost/api/logout.php'>Logout</a></li>
             {/* <li><a href="https://form.123formbuilder.com/index.php?p=submissions&id=6304875" target="_blank" rel="noopener noreferrer">Leave</a>.</li> */}
