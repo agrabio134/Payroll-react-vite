@@ -1,5 +1,6 @@
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import '../../App.css' 
+import ArchievedUser from '../../components/pages/archive/ArchievedUser'
 import AttendancePage from '../../components/pages/attendance/AttendanceLog'
 import CreateUser from '../../components/pages/createuser/CreateUser'
 import EditUser from '../../components/pages/edit/EditUser'
@@ -17,12 +18,13 @@ const MainNav = () => {
     <div className="main-nav-container">
       <BrowserRouter>
 
-      <div className='nav-item'>
+      <div className='nav-item-main'>
           <ul>
             <li><Link to="/">List of Employee</Link></li>
             <li><Link to="user/payroll">Payroll</Link></li>
             <li><Link to="user/attendance">Attendance</Link></li>
             <li><Link to="user/create">Create User</Link></li>
+            <li><Link to="user/archive">Archive</Link></li>
             
             {/* <li><Link to="user/request-leave">Leave</Link></li> */}
             <li><a className='logout' href='http://localhost/api/logout.php'>Logout</a></li>
@@ -37,6 +39,7 @@ const MainNav = () => {
                 <Route path="user/payroll" element={<PayrollPage />}></Route>
                 <Route path="user/attendance" element={<AttendancePage />}></Route>
                 <Route path="user/create" element={<CreateUser />}></Route>
+                <Route path="user/archive" element={<ArchievedUser />}></Route>
                 {/* <Route path="user/request-leave" element={<RequestLeaveAppPage />}></Route> */}
                 <Route path="user/:id/edit" element={<EditUser />}></Route>
                 

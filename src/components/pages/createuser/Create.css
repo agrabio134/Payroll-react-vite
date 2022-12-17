@@ -1,0 +1,22 @@
+.create-btn {
+  margin-top: 50px;
+  margin-left: 260px;
+}
+.create-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.create-item-container {
+  display: grid;
+  padding: 40px 100px ;
+  grid-template-columns: 1fr 1fr;
+  /* border: 4px solid rgb(160, 159, 159); */
+}
+
+.inputs{
+  display: flex;
+  flex-direction: column;
+}
+
+

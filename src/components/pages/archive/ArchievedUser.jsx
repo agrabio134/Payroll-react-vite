@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import './List.css';
+import './archive.css';
 
-const ListUsers = () => {
+const ArchievedUser = () => {
 
 
 
@@ -14,25 +14,23 @@ const ListUsers = () => {
     }, []);
 
     const getUsers = () =>{      
-        axios.get('http://localhost:80/api/users/').then(function(response){
+        axios.get('http://localhost:80/api/archive.php/users/').then(function(response){
             console.log(response.data)
             setUsers(response.data)
     }  )
     }
-    const deleteUser = (id) => {
-        axios.delete(`http://localhost:80/api/user/${id}/delete`).then(function(response){
-            console.log(response.data);
-            getUsers();
-        });
-    }
+    // const deleteUser = (id) => {
+    //     axios.delete(`http://localhost:80/api/archive/user/${id}/delete`).then(function(response){
+    //         console.log(response.data);
+    //         getUsers();
+    //     });
+    // }
 
-    const archiveUser = (id) => {
-        if(confirm('Are you sure you want Archive this user?')) {
-        axios.put(`http://localhost:80/api/user/${id}/archive`).then(function(response){
+    const unarchivedUser = (id) => {
+        axios.put(`http://localhost:80/api/user/${id}/unarchivedUser`).then(function(response){
             console.log(response.data);
             getUsers();
         });
-    }
     }
 
 
@@ -42,7 +40,7 @@ const ListUsers = () => {
         <div className="main-container">
             <div className="list-container">
             <h1>LIST OF EMPLOYEE</h1>
-            <iframe src="http://localhost/api/payroll/add_file.php" ></iframe>
+            <iframe src="http://localhost/api/payroll/add_file.php" frameborder="0"></iframe>
 
             <div className="list-item">
             <table>
@@ -70,7 +68,7 @@ const ListUsers = () => {
                             <td className="item-btn">
                                 
                             <button className="edit-btn"> <Link to={`user/${user.id}/edit`} className="edit-btn">Edit</Link></button>
-                            <button onClick={() => archiveUser(user.id)} className="del-btn">Archive</button>
+                            <button onClick={() => unarchivedUser(user.id)} className="del-btn">Unarchive</button>
                                 
                             </td>
                         </tr>
@@ -84,4 +82,4 @@ const ListUsers = () => {
     )
 }
 
-export default ListUsers
+export default ArchievedUser

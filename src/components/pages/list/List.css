@@ -1,0 +1,57 @@
+.list-container {
+  display: flex;
+  flex-direction: column;
+  /* overflow-y: scroll; */
+  scroll-behavior: smooth;
+}
+.list-item {
+  display: grid;
+  color: rgb(0, 0, 0);
+}
+.item:nth-child(even) {
+  background: rgb(213, 218, 235);
+}
+
+.item-btn {
+  display: flex;
+}
+
+.edit-btn {
+  /* padding: 5px 10px; 
+   background-color: rgb(139, 174, 226); */
+  width: 70px;
+  color: white;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  border-radius: 5px;
+  height: 32px;
+  background-color: rgb(124, 130, 146);
+
+}
+
+.del-btn {
+  border-radius: 5px;
+  margin-left: 2px;
+  background-color: rgb(212, 99, 99);
+  width: 90px;
+  height: 32px;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+}
+
+table .item {
+  background-color: rgb(203, 215, 223);
+  width: 150px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.item-label {
+  background-color: rgb(107, 124, 150);
+  color: white;
+  width: 150px;
+  padding: 5px;
+  /* border-radius: 5px; */
+}

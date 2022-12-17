@@ -4,7 +4,10 @@
     padding: 1px;
     display: flex;
     justify-content: end;
-    background-color: rgb(49, 84, 85);
+    background-color: rgb(107, 124, 150);
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 .logo{
     margin-right: 40px;
